@@ -17,4 +17,33 @@ function probarValidarNombre() {
 
 probarValidarNombre();
 
-function probarValidarCiudad() {}
+function probarValidarCiudad() {
+  console.assert(
+    validarCiudad("Buenos Aires") === "",
+    "ValidarCiudad falló con un nombre de ciudad válido"
+  );
+  console.assert(
+    validarCiudad("") === "Debe seleccionar una ciudad",
+    "ValidarCiudad no valido en un campo vacío"
+  );
+}
+
+function probarValidarDescripcionRegalo() {
+  console.assert(
+    validarDescripcionRegalo(
+      "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+    ) === "Debe contener menos de 100 caracteres",
+    "ValidarDescripcionRegalo no valído que el campo contenga menos de 100 caracteres"
+  );
+  console.assert(
+    validarDescripcionRegalo("") === "Este campo no puede estar vacío",
+    "validarDescripcionRegalo no pudo validar que el campo no debe estar vacio"
+  );
+}
+console.assert(
+  validarDescripcionRegalo("chocolates") === "",
+  "validarDescripcionRegalo fallo con una descripcion de regalo válida"
+);
+probarValidarNombre();
+probarValidarCiudad();
+probarValidarDescripcionRegalo();
