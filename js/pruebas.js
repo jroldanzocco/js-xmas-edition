@@ -10,6 +10,11 @@ function probarValidarNombre() {
   );
 
   console.assert(
+    validarNombre("123124") === "El campo nombre solo acepta letras",
+    "validarNombre no valido que el campo solo contenga letras"
+  );
+
+  console.assert(
     validarNombre("Fabricio") === "",
     "Validar nombre falló con un nombre válido"
   );
